@@ -1,0 +1,2 @@
+class Why < ApplicationRecord
+end

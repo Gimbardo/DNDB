@@ -1,0 +1,2 @@
+module WhiesHelper
+end
