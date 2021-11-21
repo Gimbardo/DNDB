@@ -6,7 +6,7 @@
 <table>
   <thead>
   <tr>
-    <th>email</th>
+    <th>username</th>
     <th>gifts</th>
     <th colspan="3"></th>
   </tr>
@@ -15,7 +15,7 @@
   <tbody>
   <% @users.each do |user| %>
     <tr>
-      <td><%= user.email %></td>
+      <td><%= user.username %></td>
       <td><%= user.gifts.count %></td>
       <td><%= link_to 'Show', user %></td>
     </tr>

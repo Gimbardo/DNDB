@@ -19,14 +19,6 @@
   </head>
 
   <body data-controller="<%= controller_name %>" data-action="<%= action_name %>">
-
-      <% if user_signed_in? %>
-        <% if current_user.admin? %>
-          <%= link_to "List of all Users", users_path %>
-        <% end %>
-      <%else %>
-        <%= link_to "Log In", new_user_session_path %>
-      <% end %>
       <div id="container">
         <%= yield %>
       </div>

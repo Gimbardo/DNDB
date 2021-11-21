@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   root 'home#main'
 
-  resources :users, only: [:index, :show]
-  resources :gifts, only: [:new, :create, :show, :index]
+  resources :users, only: [ :index, :show ]
+  resources :gifts, except: [ :edit, :update ]
 
-  resources :whies, except: [:show]
-  resources :whats, except: [:show]
-  resources :whos, except: [:show]
+  resources :whies, except: [ :show ]
+  resources :whats, except: [ :show ]
+  resources :whos, except: [ :show ]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

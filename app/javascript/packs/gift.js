@@ -1,0 +1,3 @@
+$(window).on('gifts:loaded', () => {
+
+});

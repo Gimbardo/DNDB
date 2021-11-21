@@ -21,6 +21,7 @@
                                          POST   /gifts(.:format)                                                                                  gifts#create
                                 new_gift GET    /gifts/new(.:format)                                                                              gifts#new
                                     gift GET    /gifts/:id(.:format)                                                                              gifts#show
+                                         DELETE /gifts/:id(.:format)                                                                              gifts#destroy
                                    whies GET    /whies(.:format)                                                                                  whies#index
                                          POST   /whies(.:format)                                                                                  whies#create
                                  new_why GET    /whies/new(.:format)                                                                              whies#new
