@@ -1,6 +1,16 @@
-<h1>Click to generate a gift</h1>
+<br>
+<div class= "btn delibird fight", data-newpresent="<%= new_gift_path%>">
+  <div class="present"></div>
+</div>
 
-
-<div class= "delibird", data-newpresent="<%= new_gift_path%>">
-  <div class="btn present"></div>
+<div class="battle-buttons">
+  <div class="btn rounded-pill btn-lg btn-fight fight", data-newpresent="<%= new_gift_path%>">FIGHT</div>
+  <%= link_to "BAG", gifts_path, class:"btn rounded-pill btn-lg btn-bag"%>
+  <%= link_to "POKEMON", new_user_session_path, class:"btn rounded-pill btn-lg btn-pokemon"%>
+  <%= if user_signed_in?
+        link_to "RUN", destroy_user_session_path(id: current_user.id), method: :delete, class:"btn rounded-pill btn-lg btn-run"
+      else
+        link_to "RUN", "https://github.com/Gimbardo/DNDB", class:"btn rounded-pill btn-lg btn-run"
+      end
+  %>
 </div>

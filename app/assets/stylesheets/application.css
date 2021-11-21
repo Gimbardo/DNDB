@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 500px;
+}
