@@ -11,10 +11,6 @@
     </div>
   <% end %>
 
-  <%= text_field :post, :who_content, value: @gift.who.content, readonly: true%>
-  <%= text_field :post, :what_content, value: @gift.what.content, readonly: true%>
-  <%= text_field :post, :why_content, value: @gift.why.content, readonly: true%>
-
   <div class="field">
     <%= form.hidden_field :who_id %>
 
@@ -27,7 +23,7 @@
       <%= form.hidden_field :user_id, value: current_user.id %>
 
     <div class="actions">
-      <%= form.submit %>
+      <%= form.submit "Save Gift"%>
     </div>
   <%end %>
 <% end %>

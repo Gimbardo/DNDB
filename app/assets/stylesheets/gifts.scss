@@ -1,3 +1,27 @@
 // Place all the styles related to the Gifts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.gift {
+  background-image: url("present.png");
+  background-size: 600px 600px;
+  width: 600px;
+  height: 600px;
+
+  transform: rotate(7deg);
+}
+
+.messages{
+  display: grid;
+  grid-template-rows: 300px 50px 50px 50px;
+  transform: rotate(-7deg);
+}
+
+.message{
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: 10%;
+  align-self: center;
+  transform: translate(-25px);
+}

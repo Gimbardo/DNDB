@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root 'home#main'
 
-  resources :users, only: [ :index, :show ]
+  resources :users, only: [ :index ]
   resources :gifts, except: [ :edit, :update ]
 
   resources :whies, except: [ :show ]

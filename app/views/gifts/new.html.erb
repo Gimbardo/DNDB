@@ -1,4 +1,13 @@
-<h1>Here's your fortune cookie</h1>
+
+
+<div class="gift">
+  <div class="messages">
+    <div></div>
+    <%= text_field :post, :who_content, value: @gift.who.content, readonly: true, class:"form-control form-control-sm message"%>
+    <%= text_field :post, :what_content, value: @gift.what.content, readonly: true, class:"form-control form-control-sm message"%>
+    <%= text_field :post, :why_content, value: @gift.why.content, readonly: true, class:"form-control form-control-sm message"%>
+  </div>
+</div>
 
 <%= render 'form', gift: @gift %>
 
