@@ -1,9 +1,9 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
+<h1>List of Trainers</h1>
 
-<table>
+<table class="table table-dark">
   <thead>
   <tr>
     <th>username</th>
@@ -17,7 +17,7 @@
     <tr>
       <td><%= user.username %></td>
       <td><%= user.gifts.count %></td>
-      <td><%= link_to 'Show', user %></td>
+      <td><%= link_to '', gifts_path(user_id: user), class:"fa fa-search icon" %></td>
     </tr>
   <% end %>
   </tbody>
