@@ -76,25 +76,25 @@ $run-hover-color: rgb(113, 173, 190);
 .btn-fight:hover, .btn-fight:focus, .btn-fight:active {
   color: #fff;
   background-color: $fight-hover-color;
-  border-color: $fight-bg-color; /*set the color you want here*/
+  border-color: $fight-bg-color;
 }
 
 .btn-bag:hover, .btn-bag:focus, .btn-bag:active {
   color: #fff;
   background-color: $bag-hover-color;
-  border-color: $bag-bg-color; /*set the color you want here*/
+  border-color: $bag-bg-color;
 }
 
 .btn-pokemon:hover, .btn-pokemon:focus, .btn-pokemon:active {
   color: #fff;
   background-color: $pokemon-hover-color;
-  border-color: $pokemon-bg-color; /*set the color you want here*/
+  border-color: $pokemon-bg-color;
 }
 
 .btn-run:hover, .btn-run:focus, .btn-run:active {
   color: #fff;
   background-color: $run-hover-color;
-  border-color: $run-bg-color; /*set the color you want here*/
+  border-color: $run-bg-color;
 }
 
 .battle-buttons {
@@ -111,3 +111,13 @@ $run-hover-color: rgb(113, 173, 190);
 .battle-text {
   align-self: center;
 }
+
+.battle-system {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 500px
+}
+

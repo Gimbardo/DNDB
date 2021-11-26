@@ -1,20 +1,23 @@
+<p id="notice"><%= notice %></p>
 <br>
 <div class= "btn delibird fight", data-newpresent="<%= new_gift_path%>">
   <div class="present"></div>
 </div>
 
-<div class="battle-text">What will <%= user_signed_in? ? current_user&.username : "guest" %> do?</div>
+<div class="battle-system">
+  <div class="battle-text">What will <%= user_signed_in? ? current_user&.username : "guest" %> do?</div>
 
-<div class="battle-buttons">
-  <div class="btn rounded-pill btn-lg btn-fight fight", data-newpresent="<%= new_gift_path%>">FIGHT</div>
-  <%= link_to "BAG", gifts_path, class:"btn rounded-pill btn-lg btn-bag"%>
+  <div class="battle-buttons">
+    <div class="btn rounded-pill btn-lg btn-fight fight", data-newpresent="<%= new_gift_path%>">FIGHT</div>
+    <%= link_to "BAG", gifts_path, class:"btn rounded-pill btn-lg btn-bag"%>
 
-  <%= if user_signed_in?
-        "#{link_to 'POKEMON', users_path, class:'btn rounded-pill btn-lg btn-pokemon'}
-         #{link_to 'RUN', destroy_user_session_path(id: current_user.id), method: :delete, class:'btn rounded-pill btn-lg btn-run'}".html_safe
-      else
-        "#{link_to "POKEMON", new_user_session_path, class:"btn rounded-pill btn-lg btn-pokemon"}
-         #{link_to "RUN", "https://github.com/Gimbardo/DNDB", class:"btn rounded-pill btn-lg btn-run"}".html_safe
-      end
-  %>
+    <%= if user_signed_in?
+          "#{link_to 'POKEMON', users_path, class:'btn rounded-pill btn-lg btn-pokemon'}
+           #{link_to 'RUN', destroy_user_session_path(id: current_user.id), method: :delete, class:'btn rounded-pill btn-lg btn-run'}".html_safe
+        else
+          "#{link_to "POKEMON", new_user_session_path, class:"btn rounded-pill btn-lg btn-pokemon"}
+           #{link_to "RUN", "https://github.com/Gimbardo/DNDB", class:"btn rounded-pill btn-lg btn-run"}".html_safe
+        end
+    %>
+  </div>
 </div>

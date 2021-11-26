@@ -1,12 +1,11 @@
 class GiftsController < ApplicationController
-  before_action :set_gift, only: %i[ show edit update destroy ]
+  before_action :set_gift, only: %i[ destroy ]
   # GET /gifts or /gifts.json
   def index
-    @gifts = Gift.all
-  end
 
-  # GET /gifts/1 or /gifts/1.json
-  def show
+    @user = ( params[:user_id] ? User.find(params[:user_id]) : current_user )
+
+    @gifts = Gift.where(user_id: @user&.id)
   end
 
   # GET /gifts/new
@@ -17,33 +16,16 @@ class GiftsController < ApplicationController
     @gift = Gift.new(who: who, what: what, why: why)
   end
 
-  # GET /gifts/1/edit
-  def edit
-  end
-
   # POST /gifts or /gifts.json
   def create
     @gift = Gift.new(gift_params)
 
     respond_to do |format|
       if @gift.save
-        format.html { redirect_to @gift, notice: "Gift was successfully created." }
+        format.html { redirect_to root_path, notice: "Gift was successfully created." }
         format.json { render :index, status: :created, location: @gift }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @gift.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /gifts/1 or /gifts/1.json
-  def update
-    respond_to do |format|
-      if @gift.update(gift_params)
-        format.html { redirect_to @gift, notice: "Gift was successfully updated." }
-        format.json { render :show, status: :ok, location: @gift }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @gift.errors, status: :unprocessable_entity }
       end
     end
