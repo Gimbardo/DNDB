@@ -1,5 +1,5 @@
 $(window).on('home#main:loaded', () => {
-    let animation = anime({
+    anime({
         targets: '.delibird',
         translateX: -20,
         rotate: function() {
@@ -15,16 +15,16 @@ $(window).on('home#main:loaded', () => {
         loop: true
     })
 
-    $('.fight').on("click", () => {movePresent()})
+    $('.fight').on("click", () => { movePresent() })
 
     function movePresent(){
-        let animation = anime({
+        anime({
             targets: '.present',
             translateX: [380, 1000],
             rotate: '1turn',
             duration: 3000,
         })
-        setTimeout(function(){ window.location.href = $('.delibird').data('newpresent'); }, 1000)
+        setTimeout(function(){window.location.href = $('.delibird').data('newpresent'); }, 1000)
     }
 
 

@@ -12,10 +12,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
 
-    <%= stylesheet_link_tag 'application', media: "all", 'data-turbolinks-track': Rails.env.production? ? 'reload' : 'false' %>
+
     <%#= javascript_pack_tag 'locale/'+I18n.locale.to_s, 'data-turbolinks-track': Rails.env.production? ? 'reload' : 'false' %>
-    <%= javascript_pack_tag(controller_name, 'data-turbolinks-track': Rails.env.production? ? 'reload' : 'false') rescue nil%>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': Rails.env.production? ? 'reload' : 'false' %>
+    <%= javascript_pack_tag(controller_name) rescue nil%>
+    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_link_tag 'application', media: "all" %>
   </head>
 
   <body data-controller="<%= controller_name %>" data-action="<%= action_name %>">

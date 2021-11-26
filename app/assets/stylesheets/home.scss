@@ -14,14 +14,14 @@
 }
 
 .delibird {
-  background-image: url("definitely_not_delibird.png");
+  background-image: asset_url("definitely_not_delibird.png");
   background-size: 500px 500px;
   width: 500px;
   height: 500px;
 }
 
 .present {
-  background-image: url("present.png");
+  background-image: asset_url("present.png");
   background-size: 130px 130px;
   width: 130px;
   height: 130px;

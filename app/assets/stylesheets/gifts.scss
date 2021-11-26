@@ -3,25 +3,23 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .gift {
-  background-image: url("present.png");
-  background-size: 600px 600px;
-  width: 600px;
-  height: 600px;
+  background-image: asset_url("present.png");
+  background-size: 650px 650px;
+  width: 650px;
+  height: 650px;
 
-  transform: rotate(7deg);
 }
 
 .messages{
   display: grid;
-  grid-template-rows: 300px 50px 50px 50px;
-  transform: rotate(-7deg);
+  grid-template-rows: 350px 50px 50px 50px;
 }
 
 .message{
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
+  width: 56%;
   height: 10%;
   align-self: center;
-  transform: translate(-25px);
+  transform: translate(-38px);
 }

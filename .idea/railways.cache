@@ -16,7 +16,6 @@
                                          POST   /users/unlock(.:format)                                                                           devise/unlocks#create
                                     root GET    /                                                                                                 home#main
                                    users GET    /users(.:format)                                                                                  users#index
-                                    user GET    /users/:id(.:format)                                                                              users#show
                                    gifts GET    /gifts(.:format)                                                                                  gifts#index
                                          POST   /gifts(.:format)                                                                                  gifts#create
                                 new_gift GET    /gifts/new(.:format)                                                                              gifts#new
