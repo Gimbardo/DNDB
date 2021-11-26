@@ -64,3 +64,37 @@ div.actions {
 label {
   display: block; }
 
+// SIGNUP AND LOGIN
+
+.oak {
+  background-image: asset_url("oak.png");
+  background-size: 200px 200px;
+  width: 200px;
+  height: 200px;
+}
+
+.form-check {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-check-input {
+  flex-grow: 0;
+}
+
+.form-check-label {
+  flex-grow: 1;
+}
+
+.dialog {
+  outline-style: solid;
+  border-width: 1px;
+  border-color: white;
+}
+
+.icon {
+  text-decoration: none;
+}
