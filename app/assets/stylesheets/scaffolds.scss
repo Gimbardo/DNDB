@@ -98,3 +98,12 @@ label {
 .icon {
   text-decoration: none;
 }
+
+.rotate90{
+  transform: rotate(90deg);
+}
+
+.back{
+  width: 50px;
+  align-self: start;
+}

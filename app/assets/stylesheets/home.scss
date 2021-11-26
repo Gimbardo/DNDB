@@ -51,6 +51,7 @@ $run-hover-color: rgb(113, 173, 190);
   border-width: 2px;
   font-size: 21px;
   width: 180px;
+  height: 50px;
 }
 
 .btn-fight {
@@ -119,5 +120,17 @@ $run-hover-color: rgb(113, 173, 190);
   align-items: flex-start;
   justify-content: flex-start;
   width: 500px
+}
+
+.btn-new-trainer {
+  @include btn-battle();
+  width: 250px;
+  background-color: $fight-bg-color;
+}
+
+.btn-new-trainer:hover, .btn-new-trainer:focus, .btn-new-trainer:active {
+  color: #fff;
+  background-color: $fight-hover-color;
+  border-color: $fight-bg-color;
 }
 

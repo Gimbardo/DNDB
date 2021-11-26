@@ -18,12 +18,13 @@
 
     <%= form.hidden_field :why_id %>
   </div>
-
-  <%if user_signed_in? %>
+  <div class="actions">
+    <%= link_to "<i class='fas fa-level-down-alt rotate90'></i>".html_safe, root_path, class:"btn btn-run back" %>
+    <td><%= link_to '', root_path, class:" icon" %></td>
+    <%if user_signed_in? %>
       <%= form.hidden_field :user_id, value: current_user.id %>
 
-    <div class="actions">
       <%= form.submit "Save Gift", class:"btn btn-bag"%>
-    </div>
-  <%end %>
+    <% end %>
+  </div>
 <% end %>
