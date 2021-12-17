@@ -9,7 +9,16 @@
 
   <table class="table table-dark">
 
-
+    <% if current_user.admin? %>
+      <thead>
+        <tr>
+          <td><%= link_to 'list of Whos', whos_path, class:'btn btn-sm btn-pieces' %></td>
+          <td><%= link_to 'list of Whats', whats_path, class:'btn btn-sm btn-pieces' %></td>
+          <td><%= link_to 'list of Whies', whies_path, class:'btn btn-sm btn-pieces' %></td>
+          <td></td>
+        </tr>
+      </thead>
+    <% end %>
     <tbody>
       <% @gifts.each do |gift| %>
         <tr>

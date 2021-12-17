@@ -22,7 +22,7 @@ class WhosController < ApplicationController
 
     respond_to do |format|
       if @who.save
-        format.html { redirect_to @who, notice: "Who was successfully created." }
+        format.html { redirect_to whos_path, notice: "Who was successfully created." }
         format.json { render :index, status: :created, location: @who }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -35,7 +35,7 @@ class WhosController < ApplicationController
   def update
     respond_to do |format|
       if @who.update(who_params)
-        format.html { redirect_to @who, notice: "Who was successfully updated." }
+        format.html { redirect_to whos_path, notice: "Who was successfully updated." }
         format.json { render :index, status: :ok, location: @who }
       else
         format.html { render :edit, status: :unprocessable_entity }

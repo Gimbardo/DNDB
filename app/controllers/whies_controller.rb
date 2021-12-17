@@ -22,7 +22,7 @@ class WhiesController < ApplicationController
 
     respond_to do |format|
       if @why.save
-        format.html { redirect_to @why, notice: "Why was successfully created." }
+        format.html { redirect_to whies_path, notice: "Why was successfully created." }
         format.json { render :index, status: :created, location: @why }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -35,7 +35,7 @@ class WhiesController < ApplicationController
   def update
     respond_to do |format|
       if @why.update(why_params)
-        format.html { redirect_to @why, notice: "Why was successfully updated." }
+        format.html { redirect_to whies_path, notice: "Why was successfully updated." }
         format.json { render :index, status: :ok, location: @why }
       else
         format.html { render :edit, status: :unprocessable_entity }

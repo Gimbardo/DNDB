@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h2><%= elements.model_name.human(count: 1).pluralize %></h2>
+
+<table class="table table-dark">
+  <thead>
+  <tr>
+    <th>Content</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% elements.each do |el| %>
+    <tr>
+      <td><%= el.content %></td>
+      <td><%= link_to 'Edit', edit_path.call(el) %></td>
+      <td><%= link_to 'Destroy', el, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="form-check">
+  <%= link_to "<i class='fas fa-level-down-alt rotate90'></i>".html_safe, gifts_path, class: "btn btn-run back" %>
+  <%= link_to "New #{elements.model_name.human(count: 1)}", new_path.call, class: "btn btn-bag" %>
+</div>
