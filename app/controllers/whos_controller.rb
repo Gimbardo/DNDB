@@ -1,5 +1,6 @@
 class WhosController < ApplicationController
   before_action :set_who, only: %i[ edit update destroy ]
+  load_and_authorize_resource
 
   # GET /whos or /whos.json
   def index

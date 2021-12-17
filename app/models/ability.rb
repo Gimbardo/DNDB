@@ -7,17 +7,21 @@ class Ability
 
     user ||= User.new
 
+
     if user.new_record?
-      can :read, Gift
+      can [:new, :index], Gift
+      return
     end
 
     if user.admin?
       can :manage, :all
     else
       can :read, :all
+      cannot :read, [Who, Why, What]
       can :manage, Gift, user_id: user.id
       can :manage, User, id: user.id
     end
+
 
     # Define abilities for the passed in user here. For example:
     #

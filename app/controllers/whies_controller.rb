@@ -1,5 +1,6 @@
 class WhiesController < ApplicationController
   before_action :set_why, only: %i[ edit update destroy ]
+  load_and_authorize_resource
 
   # GET /whies or /whies.json
   def index

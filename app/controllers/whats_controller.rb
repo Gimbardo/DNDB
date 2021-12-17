@@ -1,5 +1,6 @@
 class WhatsController < ApplicationController
   before_action :set_what, only: %i[ edit update destroy ]
+  load_and_authorize_resource
 
   # GET /whats or /whats.json
   def index

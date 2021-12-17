@@ -1,5 +1,7 @@
 class GiftsController < ApplicationController
   before_action :set_gift, only: %i[ destroy ]
+  load_and_authorize_resource
+
   # GET /gifts or /gifts.json
   def index
 
