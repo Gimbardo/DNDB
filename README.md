@@ -1,24 +1,5 @@
-# README
+# DNDelibird
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+or DNDB, is a Gift generator created because yes.  
+It created gifts randomizing 3 parameters: Who, What and Why.
+Currently deployes whit heroku: https://dndelibird.herokuapp.com/
