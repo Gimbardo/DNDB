@@ -28,76 +28,6 @@
   transform: translate(250%, 20%);
 }
 
-$fight-bg-color: rgb(194,61,56);
-$fight-hover-color: rgb(224, 128, 151);
-
-$bag-bg-color: rgb(226,160,56);
-$bag-hover-color: rgb(226, 210, 124);
-
-$pokemon-bg-color: rgb(86,170,56);
-$pokemon-hover-color: rgb(143, 178, 122);
-
-$run-bg-color: rgb(53,127,190);
-$run-hover-color: rgb(113, 173, 190);
-
-@mixin btn-battle{
-  align-self: center;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-  border-color: white;
-  border-width: 2px;
-  font-size: 21px;
-  width: 180px;
-  height: 50px;
-}
-
-.btn-fight {
-  @include btn-battle();
-  background-color: $fight-bg-color;
-}
-
-.btn-bag {
-  @include btn-battle();
-  background-color: $bag-bg-color;
-}
-
-.btn-pokemon {
-  @include btn-battle();
-  background-color: $pokemon-bg-color;
-}
-
-.btn-run {
-  @include btn-battle();
-  background-color: $run-bg-color;
-}
-
-.btn-fight:hover, .btn-fight:focus, .btn-fight:active {
-  color: #fff;
-  background-color: $fight-hover-color;
-  border-color: $fight-bg-color;
-}
-
-.btn-bag:hover, .btn-bag:focus, .btn-bag:active {
-  color: #fff;
-  background-color: $bag-hover-color;
-  border-color: $bag-bg-color;
-}
-
-.btn-pokemon:hover, .btn-pokemon:focus, .btn-pokemon:active {
-  color: #fff;
-  background-color: $pokemon-hover-color;
-  border-color: $pokemon-bg-color;
-}
-
-.btn-run:hover, .btn-run:focus, .btn-run:active {
-  color: #fff;
-  background-color: $run-hover-color;
-  border-color: $run-bg-color;
-}
-
 .battle-buttons {
   display: grid;
   grid-template-columns: 180px 180px;
@@ -122,15 +52,4 @@ $run-hover-color: rgb(113, 173, 190);
   width: 500px
 }
 
-.btn-new-trainer {
-  @include btn-battle();
-  width: 250px;
-  background-color: $fight-bg-color;
-}
-
-.btn-new-trainer:hover, .btn-new-trainer:focus, .btn-new-trainer:active {
-  color: #fff;
-  background-color: $fight-hover-color;
-  border-color: $fight-bg-color;
-}
 
