@@ -12,10 +12,7 @@ class GiftsController < ApplicationController
 
   # GET /gifts/new
   def new
-    who = random_instance Who
-    what = random_instance What
-    why = random_instance Why
-    @gift = Gift.new(who: who, what: what, why: why)
+    @gift = Gift.generate
   end
 
   # POST /gifts or /gifts.json
@@ -51,9 +48,5 @@ class GiftsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def gift_params
       params.require(:gift).permit(:who_id, :what_id, :why_id, :user_id)
-    end
-
-    def random_instance(model)
-      model.offset(rand(model.count)).first
     end
 end

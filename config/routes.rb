@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  #API
+  namespace :api, defaults: { format: :json } do
+    get '/paolofox' => 'gifts#new'
+  end
+
+  #WebApp
   get 'users/index'
   get 'users/show'
   devise_for :users
@@ -11,5 +17,4 @@ Rails.application.routes.draw do
   resources :whies, except: [ :show ]
   resources :whats, except: [ :show ]
   resources :whos, except: [ :show ]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
