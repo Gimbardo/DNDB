@@ -9,8 +9,8 @@ jobs:
         ports: 
           - 5432:5432
         env:
-          POSTGRES_USER: DNDB_user
-          POSTGRES_PASSWORD: DNDB_pswd
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -23,25 +23,30 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
+          
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7.2
           bundler-cache: true
+
       - name: Install dependencies
         run: |
           bundle install --jobs 4 --retry 3
           yarn
       - name: Install PostgreSQL client
         run: sudo apt-get -yqq install libpq-dev
+
       - name: Set up database
         env:
           PGHOST: localhost
           PGUSER: postgres
           PGPASSWORD: postgres
           RAILS_ENV: test
-        run: bundle exec rails db:setup
-      - name: Run rspec
         run: |
           sudo systemctl start postgresql
-          rspec
+          bundle exec rails db:setup
+
+      - name: Run rspec
+        run:
+          bundle exec rspec
