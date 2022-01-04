@@ -6,7 +6,7 @@ jobs:
     services:
       postgres:
         image: postgres
-        ports: ['5432:5432']
+        ports: 5432:5432
         env:
           POSTGRES_USER: DNDB_user
           POSTGRES_PASSWORD: DNDB_pswd
@@ -31,12 +31,14 @@ jobs:
         run: |
           bundle install --jobs 4 --retry 3
           yarn
+      - name: Install PostgreSQL client
+      run: sudo apt-get -yqq install libpq-dev
       - name: Set up database
         env:
           PGHOST: localhost
           PGUSER: postgres
           PGPASSWORD: postgres
           RAILS_ENV: test
-        run: bundle exec rails db:setup
+        run: bin/rails db:setup
       - name: Run rspec
         run: bundle exec rspec
