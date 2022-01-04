@@ -32,7 +32,7 @@ jobs:
           bundle install --jobs 4 --retry 3
           yarn
       - name: Install PostgreSQL client
-      run: sudo apt-get -yqq install libpq-dev
+        run: sudo apt-get -yqq install libpq-dev
       - name: Set up database
         env:
           PGHOST: localhost
