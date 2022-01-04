@@ -44,4 +44,4 @@ jobs:
       - name: Run rspec
         run: |
           sudo systemctl start postgresql
-          bundle exec rspec
+          rspec
