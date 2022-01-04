@@ -40,6 +40,6 @@ jobs:
           PGUSER: postgres
           PGPASSWORD: postgres
           RAILS_ENV: test
-        run: bin/rails db:setup
+        run: bundle exec rails db:setup
       - name: Run rspec
         run: bundle exec rspec
