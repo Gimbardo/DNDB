@@ -43,7 +43,5 @@ jobs:
         run: bundle exec rails db:setup
       - name: Run rspec
         run: |
-          ps -ef | grep postgres
-          sudo find /tmp/ -name .s.PGSQL.5432
-          sudo find /var/run/postgresql/ -name .s.PGSQL.5432
+          systemctl status postgresql
           bundle exec rspec
