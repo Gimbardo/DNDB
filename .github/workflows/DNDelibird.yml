@@ -9,8 +9,8 @@ jobs:
         ports: 
           - 5432:5432
         env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: DNDB_user
+          POSTGRES_PASSWORD: DNDB_pswd
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -40,12 +40,13 @@ jobs:
       - name: Set up database
         env:
           PGHOST: localhost
-          PGUSER: postgres
-          PGPASSWORD: postgres
+          PGUSER: DNDB_user
+          PGPASSWORD: DNDB_pswd
           RAILS_ENV: test
         run: |
           sudo systemctl start postgresql
           bundle exec rails db:setup
+          bundle exec rails db:migrate
 
       - name: Run rspec
         run:
