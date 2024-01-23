@@ -17,12 +17,12 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: DNDB_user
-  password: DNDB_pswd
-
+  host: <%= ENV['POSTGRESQL_HOST'] %>
+  port:  <%= ENV['POSTGRESQL_PORT'] %>
+  pool: 5 
+  username: <%= ENV['POSTGRESQL_USER'] %> 
+  password: <%= ENV['POSTGRESQL_PSWD'] %> 
+  
 development:
   <<: *default
   database: DNDB_development
