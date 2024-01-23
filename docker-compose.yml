@@ -1,0 +1,40 @@
+version: '2'
+
+x-backend:
+  &backend
+  build:
+    context: .
+  environment:
+    RAILS_ENV: development
+  volumes:
+    - .:/app
+    - bundle:/bundle
+
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: dndb_user
+      POSTGRES_PASSWORD: dndb_pswd
+    ports:
+      - "5432:5432"
+    volumes:
+      - 'pgdata:/var/lib/postgresql/data'
+
+  web:
+    <<: *backend
+    build: .
+    ports: 
+      - "3000:3000"
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+    environment:
+      - POSTGRES_URL=postgresql://dndb_user:dndb_pswd@db:5432/DNDB
+
+volumes:
+  bundle:
+  pgdata:
+    external: true
