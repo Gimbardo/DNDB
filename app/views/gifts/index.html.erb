@@ -2,8 +2,6 @@
 
 <% if !user_signed_in? %>
   <h4>In order to view saved gifts, first <%=link_to "Sign in", new_user_session_path %></h4>
-<% elsif @gifts.empty? %>
-  <h4>No saved gifts for this user</h4>
 <% else %>
   <h2><%=@user.username %>'s gifts</h2>
 
@@ -20,16 +18,21 @@
       </thead>
     <% end %>
     <tbody>
-      <% @gifts.each do |gift| %>
-        <tr>
-          <td><%= gift.who.content %></td>
-          <td><%= gift.what.content %></td>
-          <td><%= gift.why.content %></td>
-          <% if current_user.id == @user.id || current_user.admin?%>
-            <td><%= link_to '', gift, method: :delete, data: { confirm: 'Are you sure?' }, class:"fa fa-trash icon" %></td>
-          <% end %>
-        </tr>
+      <% if @gifts.empty? %>
+        <tr><td colspan="4">No saved gifts for this user</td></tr>
+      <% else %>
+        <% @gifts.each do |gift| %>
+          <tr>
+            <td><%= gift.who.content %></td>
+            <td><%= gift.what.content %></td>
+            <td><%= gift.why.content %></td>
+            <% if current_user.id == @user.id || current_user.admin?%>
+              <td><%= link_to '', gift, method: :delete, data: { confirm: 'Are you sure?' }, class:"fa fa-trash icon" %></td>
+            <% end %>
+          </tr>
+        <% end %>
       <% end %>
+
     </tbody>
   </table>
 <% end %>
