@@ -31,10 +31,7 @@ services:
       - db
     stdin_open: true
     tty: true
-    environment:
-      - POSTGRES_URL=postgresql://dndb_user:dndb_pswd@db:5432/DNDB
 
 volumes:
   bundle:
   pgdata:
-    external: true
